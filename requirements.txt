@@ -4,3 +4,4 @@ googletrans==4.0.0rc1
 numpy
 tensorflow
 django-cors-headers
+gunicorn
