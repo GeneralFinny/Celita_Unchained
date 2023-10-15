@@ -1,14 +1,29 @@
 {
   "version": 2,
+  "functions": {
+    "api": {
+      "src": "Celitasium/Celita_Web/views.py",
+      "includeFiles": "Celitasium/**"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/translate",
+      "destination": "/.vercel/functions/api/translate"
+    }
+  ],
   "builds": [
     {
-      "src": "/Celitasium/**",
+      "src": "Celitasium/**",
       "use": "@vercel/python"
     }
   ],
   "routes": [
     { "handle": "filesystem" },
-    { "src": "/translate", "dest": "Celitasium/views.translate" },
-    { "src": "/(.*)", "dest": "/Celitasium/manage.py" }
+    { "src": "/static/(.*)", "dest": "/static/$1" },
+    {
+      "src": "/.*",
+      "dest": "/Celitasium/wsgi.py"
+    }
   ]
 }
