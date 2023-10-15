@@ -12,12 +12,6 @@
       "destination": "/.vercel/functions/api/translate"
     }
   ],
-  "builds": [
-    {
-      "src": "Celitasium/**",
-      "use": "@vercel/python"
-    }
-  ],
   "routes": [
     { "handle": "filesystem" },
     { "src": "/static/(.*)", "dest": "/static/$1" },
