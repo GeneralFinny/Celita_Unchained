@@ -1,0 +1,18 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "Celitasium/*",
+        "use": "@vercel/python"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/translate",
+        "dest": "Celitasium/wsgi.py"
+      }
+    ],
+    "env": {
+      "DJANGO_SETTINGS_MODULE": "Celitasium.settings"
+    }
+  }
