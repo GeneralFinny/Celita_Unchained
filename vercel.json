@@ -2,16 +2,13 @@
   "version": 2,
   "builds": [
     {
-      "src": "Celitasium/**",
+      "src": "/Celitasium/**",
       "use": "@vercel/python"
     }
   ],
   "routes": [
     { "handle": "filesystem" },
-    {
-      "src": "/translate",
-      "dest": "Celitasium.wsgi:application",
-      "methods": ["POST"]
-    }
+    { "src": "/translate", "dest": "Celitasium/views.translate" },
+    { "src": "/(.*)", "dest": "/Celitasium/manage.py" }
   ]
 }
