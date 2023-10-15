@@ -1,0 +1,7 @@
+Flask
+numpy
+tensorflow
+tensorflow-hub
+googletrans==4.0.0-rc1
+gunicorn
+flask-cors
